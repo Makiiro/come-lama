@@ -15,6 +15,10 @@ client.on("message", message => {
     if (command === "comes") {
         message.channel.send("TENHO PENA");
     }
+
+    if (command === "come") {
+        message.channel.send("TENHO PENA");
+    }
     
     if (command === "bebes") {
         message.channel.send("TENHO PENA");
@@ -25,9 +29,33 @@ client.on("message", message => {
     }
 
     if (command === "matola") {
-        message.channel.send("MATOLA NÃO COMA O MEU CRIT");
+        message.channel.send("MATOLA NÃO COMA O MEU CRIT" + "<:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313>" );
     }
-})
+
+    if (command === "inaba") {
+        message.channel.send(`
+        \nVAI TOMAR NO CU ${message.author.username}
+................./¯/)............(¯
+.............../¯ ./............... ¯
+............./. . /................ | . .
+......../´¯/' . '/´¯•¸,....,•´¯' . '´¯
+..../' /. ./ . ./ . ./¯../¯. . . . . .| '
+..( . ( . ( . ( ¯ ./' . ')..(' . '. ¯ ) . ) . ) . )
+...| . . . . . . . . . . ./.... . . . . . . . . . ./
+.....| . . . . . . . . ./....... . . . . . . . . /
+.....(. . . . . . . . . ......./. . . . . . . . . )`);
+    }
+
+    if (command === "craque") {
+        message.channel.send({files: ["https://i.imgur.com/6bKWryZ.png"]});
+    };
+
+    if (command === "greve") {
+        message.channel.send({files: ["https://i.imgur.com/NpTh5mR.jpg"]});
+    };
+
+
+});
 
 
 
@@ -35,4 +63,4 @@ client.on("message", message => {
 
 
 
-client.login("NTA1MDc3NzYxMjA3OTU5NTYz.W9IEUg.pZDF8Fpwnw1Fjs1zqh4RWAZ-uV4");
+client.login(process.env.TOKEN);
