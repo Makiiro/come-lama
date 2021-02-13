@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "$";
+require("dotenv").config();
 
 client.once("ready", () => {
     console.log("PRONTO PARA SENTIR PENA");
