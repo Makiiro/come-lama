@@ -13,6 +13,6 @@ module.exports = {
             message.channel.send(`<@${memberTarget.user.id}> foi amassado`);
         } else {
             message.channel.send("Corno não encontrado");
-        }
-    };
+        };
+    },
 };
