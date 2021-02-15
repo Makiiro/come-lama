@@ -55,7 +55,9 @@ client.on("message", message => {
         message.channel.send({files: ["https://i.imgur.com/NpTh5mR.jpg"]});
     };
 
-
+    if (command === "mat") {
+        message.channel.send("Matola..? Pra onde está me levando? Por que estamos indo para o disk\nMatola..?\nPor que está mandando comes?\nO que você está faz.. aaahh Pare.. Matola.. por favor..AAAaaaaah.. Agora estou todo melado de criticos");
+    };
 });
 
 
