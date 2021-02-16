@@ -82,12 +82,6 @@ client.on("message", async message => {
         const seconds = duration * durations[durationType];
         const target = mentions.users.first();
         console.log("MENTIONS", mentions);
-        const redisClient = await redis();
-
-        try {
-        } finally {
-            redisClient.quit();
-        };
     };
 });
 
