@@ -5,6 +5,7 @@ const fs = require("fs");
 
 
 client.commands = new Discord.Collection();
+
 const commandFiles = fs.readFileSync("./commands/").filter(file => file.endsWith(".js"));
 for(const file of commandFiles) {
     const command = require(`./commands/${file}`);
@@ -23,10 +24,6 @@ client.on("message", message => {
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLocaleLowerCase();
-
-    if (command === "mute") {
-        client.commands.get("mute").execute(message, args);
-    };
 
 });
 
