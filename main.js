@@ -23,7 +23,7 @@ client.on("message", async message => {
 
     if (command === "inaba") {
         message.channel.send(`
-        \nVAI TOMAR NO CU ${message.author.username}
+        \nVAI TOMAR NO CU ${message.author.mentions}
 ................./¯/)............(¯
 .............../¯ ./............... ¯
 ............./. . /................ | . .
