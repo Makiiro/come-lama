@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const prefix = "$";
 require("dotenv").config();
 
-client.once("ready", () => {
+client.once("ready", async () => {
     console.log("PRONTO PARA SENTIR PENA");
 });
 
@@ -42,7 +42,7 @@ client.on("message", message => {
     };
 
     if (command === "mat") {
-        message.channel.send("Matola..? Pra onde está me levando? Por que estamos indo para o disk?\nMatola..?\nPor que está mandando comes?\nO que você está faz.. aaahh Pare.. Matola.. por favor..AAAaaaaah.. Agora estou todo melado de criticos");
+        await.message.channel.send("Matola..? Pra onde está me levando? Por que estamos indo para o disk?\nMatola..?\nPor que está mandando comes?\nO que você está faz.. aaahh Pare.. Matola.. por favor..AAAaaaaah.. Agora estou todo melado de criticos");
     };
 });
 
