@@ -77,7 +77,7 @@ client.on("message", async message => {
         if (!duration[durationType]) {
             channel.send("Coloque uma forma valida de amassar o crânio " + syntax);
             return;
-        }
+        };
 
         const seconds = duration *durations[durationType];
         console.log("MENTIONS", mentions);
@@ -86,7 +86,7 @@ client.on("message", async message => {
         try {
         } finally {
             redisClient.quit();
-        }
+        };
     };
 });
 
