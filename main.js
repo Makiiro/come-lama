@@ -7,7 +7,7 @@ client.once("ready", async () => {
     console.log("PRONTO PARA SENTIR PENA");
 });
 
-client.on("message", message => {
+client.on("message", async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -43,6 +43,52 @@ client.on("message", message => {
 
     if (command === "mat") {
         message.channel.send("Matola..? Pra onde está me levando? Por que estamos indo para o disk?\nMatola..?\nPor que está mandando comes?\nO que você está faz.. aaahh Pare.. Matola.. por favor..AAAaaaaah.. Agora estou todo melado de criticos");
+    };
+
+    if (command === "mute") {
+        const syntax = "!mute <@> <duration as a number> <m, h, d or life>";
+        const {member, channel, content, mentions} = message;
+        if (!member.hasPermission("ADMINISTRATOR")) {
+            channel.send("Você não tem permissão amassar cranios");
+            return;
+        };
+
+        const split = content.trim().split(" ");
+        if (split.length !== 4) {
+            channel.send("Amasse da forma correta:" + syntax);
+            return;
+        };
+
+        const duration = split[2];
+        const durationType = split[3];
+
+        if (isNaN(duration)) {
+            channel.send("Coloque o tempo que vai amassar" + syntax);
+            return;
+        };
+
+        const durations = {
+            m: 60,
+            h: 60 * 60,
+            d: 60 * 60 * 24,
+            life: -1
+        };
+
+        if (!duration[durationType]) {
+            channel.send("Coloque uma forma valida de amassar o crânio " + syntax);
+            return;
+        }
+
+        const seconds = duration *durations[durationType];
+        console.log("MENTIONS", mentions);
+        const redisClient = await redis();
+
+        try {
+
+
+        } finally {
+            redisClient.quit();
+        }
     };
 });
 
