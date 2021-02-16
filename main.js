@@ -41,6 +41,11 @@ client.on("message", async message => {
         message.channel.send({files: ["https://i.imgur.com/NpTh5mR.jpg"]});
     };
 
+    if (command === "linda") {
+        message.channel.send(`vdd #Princesa_Linda🎯💞👑{ 🔝🔝}😱👌😱❤💞😍😘 ╭━╮┳┈┳╭━╮╭━━╭━╮, ╰━╮┃┈┃┣━╯┣━┈┣┳╯, ╰━╯╰━╯┻┈┈╰━━┻╰━ ❥❥════════❥❥ #GATAH.😍👏💘❤😍🇵‌🇷‌🇮‌🇳‌🇨‌🇪‌🇸‌🇦 😍❤. 🍃💎#Gatinha💎 👑😍💞❤ 🍃💎#tão_lindah💎👑😍💞❤ 🍃💎#Princesah💎👑😍💞❤ 🍃💎#tão_top💎👑😍💞❤ 🍃💎#Diva💎👑😍💞❤ 🍃💎#perfeição💎👑😍💞😘💓❤😉╲\ | /╱╭━━━━━━━╮╲\ | /╱ #Liindah❤😙👌😉💋#PerFeIçÂo ╱/ | \╲╰━━━━━━━╯╱/ | \╲👉👈🙈❤😍💟👏 #Ela_Arrasa 👉👈🙈❤😍💟👏 #Ela_é_Simplesmente_Uma_Diva 👉👈🙈❤😍💟👏 #Ela_é_GataTãÖö_LïNdÄa" 😍😍👏❤💘💍💑👑💞🍃 #TãÖö_PeRfEiTaA😍😍👌👑💞❤👏💘🍃 #TãÖö_MäRäVïLhÖöSäÄ👆😱😍😍💘❤😘😘👑💍🍃 #TãÖö_DëËsLÜnBrÄäNtë👏😍😍😱👌😘👑💘💍❤ #JëÏtÖö_Dë_MöDëLöÖ🙆😍😍👌 & #RöStÏnHöÖ_Dë_PrÏnCëSäÄ🙆👑✊😍😍😘👏💘❤💍💞 Perfeita 😍💓 Linda 😍💝 Bonita 😍💙 Musa😍☺ Maravilhosa 😍😚 Magnífica 😍😘 Top Das Top 😍🙆 Diva😍💘 Deusa😍 👊😍 💘💟😍👑 😍pft 💘💟😍👑 😍tão pft💘💟😍👑 😍linda💘💟😍👑 😍gata💘💟😍👑 😍Bonita💘💟😍 😍Top💘😍qualidade💘💟😍👑 ?😍q beleza💘💟😍👑 😍Princesa💘💟😍👑 😍Só no grau💘💟😍👑 😍dama💘💟😍👑 😍diva💘💟😍👑 😍maravilhosa💘💟😍👑 😍 - Linda 😍♥ 😍- Perfeita 😍😍😱👌 😍- Diva ♥👏👊👌🍃 😍- Top 😍😍😱 😍- Dlç 😍😍👊👌🍃 😍- Sdç 😍😱👏 😍- Princesa 😍👊♡ 👏😱❤ tão Lindaa ❤😱👏`);
+    }
+
+
     if (command === "mat") {
         message.channel.send("Matola..? Pra onde está me levando? Por que estamos indo para o disk?\nMatola..?\nPor que está mandando comes?\nO que você está faz.. aaahh Pare.. Matola.. por favor..AAAaaaaah.. Agora estou todo melado de criticos");
     };
