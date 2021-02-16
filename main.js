@@ -46,7 +46,7 @@ client.on("message", async message => {
     };
 
     if (command === "mute") {
-        const syntax = "!mute <@> <duration as a number> <m, h, d or life>";
+        const syntax = "$mute <@> <duration as a number> <m, h, d or life>";
         const {member, channel, content, mentions} = message;
         if (!member.hasPermission("ADMINISTRATOR")) {
             channel.send("Você não tem permissão amassar cranios");
@@ -84,8 +84,6 @@ client.on("message", async message => {
         const redisClient = await redis();
 
         try {
-
-
         } finally {
             redisClient.quit();
         }
