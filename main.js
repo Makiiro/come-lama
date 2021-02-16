@@ -26,7 +26,7 @@ client.on("message", message => {
 
     if (command === "mute") {
         client.commands.get("mute").execute(message, args);
-    }
+    };
 
 });
 
