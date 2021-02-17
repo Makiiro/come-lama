@@ -46,7 +46,7 @@ client.on("message", async message => {
     } else if (command === "bonk") {
         message.channel.send({files: ["https://i.imgur.com/xE1Kpk7.png"]});
     } else if (command === "casada") {
-        message.channel.send({file: ["https://i.imgur.com/8ootkQ1.jpg"]});
+        message.channel.send({files: ["https://i.imgur.com/8ootkQ1.jpg"]});
     };
 
     if (command === "linda") {
