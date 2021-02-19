@@ -103,6 +103,16 @@ client.on("message", async message => {
         const target = mentions.users.first();
         console.log("MENTIONS", mentions);
     };
+    
+    if (message.content == "clear") {
+        if (message.member.hasPermission("ADMINISTRATOR")) {
+            message.channel.fetchMessages()
+               .then(function(list){
+                    message.channel.bulkDelete(list);
+                }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
+        }
+    };
+
 });
 
 
