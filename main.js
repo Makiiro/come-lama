@@ -105,12 +105,30 @@ client.on("message", async message => {
     };
     
     if (command === "clear") {
-        if (message.member.hasPermission("ADMINISTRATOR")) {
-            message.channel.fetchMessages()
-               .then(function(list){
-                    message.channel.bulkDelete(list);
-                }, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
-        }
+        if (message.deletable) {
+            message.delete();
+        };
+
+        if (!message.member.hasPermission("ADMINISTRATOR")) {
+            return message.reply("Você não pode apagar").then(m => m.delete(5000));
+        };
+
+        if (!message.guild.me.hasPermission("ADMINISTRATOR")) {
+            return message.reply("???").then(m => m.delete(5000));
+        };
+
+        let deleteAmout;
+        
+        if (parseInt(args[0]) > 100) {
+            deleteAmout = 100;
+        } else {
+            deleteAmout = parseInt(args[0]);
+        };
+
+        message.channel.bulkDelete(deleteAmout, true)
+        .then(deleted => message.channel.send(`${deleted.size} mensagens foram deletadas`))
+        .catch(err => message.reply(`Tu fez alguma merda ${err}`));
+
     };
 
 });
