@@ -22,7 +22,7 @@ client.on("message", async message => {
     };
 
     if (command === "inaba") {
-        message.reply(`
+        message.channel.send(`
         \nVAI TOMAR NO CU <@!${message.author.id}>
 ................./¯/)............(¯
 .............../¯ ./............... ¯
