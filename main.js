@@ -104,7 +104,7 @@ client.on("message", async message => {
         console.log("MENTIONS", mentions);
     };
     
-    if (message.content == "clear") {
+    if (command === "clear") {
         if (message.member.hasPermission("ADMINISTRATOR")) {
             message.channel.fetchMessages()
                .then(function(list){
