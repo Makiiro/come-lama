@@ -65,6 +65,101 @@ client.on("message", async message => {
         message.channel.send("Matola..? Pra onde está me levando? Por que estamos indo para o disk?\nMatola..?\nPor que está mandando comes?\nO que você está faz.. aaahh Pare.. Matola.. por favor..AAAaaaaah.. Agora estou todo melado de criticos");
     };
 
+    if (command === "kong") {
+        message.channel.send(`TROPA DO KONG 🦍🦍🦍🦍 TROPA DO KONG 🦍🦍🦍🦍 😡 VAI TOMAR NO CU GODZILLA
+        🇧🇷 TROPA DO KONG 🇧🇷
+        
+        🇧🇷 TROPA DO KONG 🇧🇷
+        
+        🇧🇷 TROPA DO KONG 🇧🇷
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        😡 VAI TOMAR NO CU GODZILLA
+        
+        
+        
+        Quem é o GODZILLA?
+        
+        Para o cego, é a cegueira
+        
+        Para o faminto, é a fome
+        
+        Para o sedento, é o nordeste
+        
+        Para o morto, é a morte
+        
+        Para o enfermo, é desgraça
+        
+        Para o prisioneiro, é a prisão perpétua
+        
+        Para o solitário, a solidão
+        
+        Para o viajante, é porra nenhuma
+        
+        Para mim, é nada.
+        
+        📂Documentos📂‬
+        
+        ‪ └📂 KONG
+        
+        ‪ └📂 Defeitos
+        
+        ‪ └ Arquivo não Encontrado
+        
+        ┃┃╱╲ EU E
+        
+        ┃╱╱╲╲ E MINHA CASA
+        
+        ╱╱╭╮╲╲ SERVIMOS KONG
+        
+        ▔▏┗┛▕▔
+        
+        ╱▔▔▔▔▔▔▔▔▔▔╲
+        
+        ╱╱┏┳┓╭╮┏┳┓ ╲╲
+        
+        ▔▏┗┻┛┃┃┗┻┛▕▔
+        
+        
+        
+        🇧🇷 TROPA DO KONG 🇧🇷
+        
+        🇧🇷 TROPA DO KONG 🇧🇷
+        
+        🇧🇷 TROPA DO KONG 🇧🇷
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        TROPA DO KONG 🦍🦍🦍🦍
+        
+        😡 VAI TOMAR NO CU GODZILLA
+        
+        
+        
+        EI GODZILLA! VAI TOMA NO CÚ😡
+        
+        EI GODZILLA! VAI TOMA NO CÚ!
+        
+        GODZILLA É MEU PERU👿
+        
+        GODZILLA NADINHA
+        
+        KONG REI
+        
+        🐲TROPA DOS KONG ONLINE🤡🤡😎😎😎👌🖕 TA EIN SHOCK LARGATIXA?? 🤡🤡🤡👌🖕🖕VAI TOMA NO CU GODZILLA👿👌`);
+    };
+
     if (command === "mute") {
         const syntax = "$mute <@> <duration as a number> <m, h, d or life>";
         const {member, channel, content, mentions} = message;
@@ -131,6 +226,37 @@ client.on("message", async message => {
 
     };
 
+    if (command === "timeout") {
+        if (!message.member.hasPermission("ADMINISTRATOR")) {
+            return message.reply("Você não pode dar timeout").then(m => m.delete(5000));
+        };
+        
+        let person = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+        if (!person) return message.reply("não achei o corno");
+
+        let mainRole = message.guild.roles.cache.find(role => role.name === "ROLETERS");
+        let muteRole = message.guild.roles.cache.find(role => role.name === "mute");
+
+        if (!muteRole) return message.reply("não encontrei a role");
+
+        let time = args[2];
+
+        if (!time) {
+            return message.reply("Coloque o tempo");
+        };
+
+        person.roles.remove(mainRole.id);
+        person.roles.add(muteRole.id);
+
+        message.channel.send(`@${person.user.tag} tomou um mute insano de ${ms(ms(time))}`);
+
+        setTimeout(function() {
+            person.roles.add(mainRole.id);
+            person.roles.remove(muteRole.id);
+            message.channel.send(`@${person.user.tag} desmutado`)
+
+        }, ms(time));
+    };
 });
 
 
