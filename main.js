@@ -65,6 +65,10 @@ client.on("message", async message => {
         message.channel.send("Matola..? Pra onde está me levando? Por que estamos indo para o disk?\nMatola..?\nPor que está mandando comes?\nO que você está faz.. aaahh Pare.. Matola.. por favor..AAAaaaaah.. Agora estou todo melado de criticos");
     };
 
+    if (command === "roy") {
+        message.channel.send("MATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO\nMATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO\nMATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO")
+    }
+
     if (command === "kong") {
         message.channel.send(`TROPA DO KONG 🦍🦍🦍🦍 TROPA DO KONG 🦍🦍🦍🦍 😡 VAI TOMAR NO CU GODZILLA
         🇧🇷 TROPA DO KONG 🇧🇷
