@@ -66,8 +66,10 @@ client.on("message", async message => {
     };
 
     if (command === "roy") {
-        message.channel.send("MATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO\nMATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO\nMATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO")
-    }
+        message.channel.send("MATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO\nMATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO\nMATOLA POR FAVOR ME DA O ROY PELO AMOR DE DEUS EU IMPLORO");
+        message.channel.send({files: ["https://i.imgur.com/pLEBu1Y.jpg"]});
+    };
+
 
     if (command === "kong") {
         message.channel.send(`TROPA DO KONG 🦍🦍🦍🦍 TROPA DO KONG 🦍🦍🦍🦍 😡 VAI TOMAR NO CU GODZILLA
