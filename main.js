@@ -3,14 +3,15 @@ const client = new Discord.Client();
 const prefix = "$";
 require("dotenv").config();
 
-client.once("ready", async () => {
+client.on("ready", async () => {
     console.log("PRONTO PARA SENTIR PENA");
-    client.login(process.env.TOKEN);
-    client.user.setActivity('AMASSANDO', { type: 'AMASSANDO CR' });
+    client.user.setActivity('AMASSANDO', { type: 'AMASSANDO CR' }).catch(console.error);
 });
 
 
+
 client.on("message", async message => {
+    client.user.setActivity('AMASSANDO', { type: 'AMASSANDO CR' });
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
