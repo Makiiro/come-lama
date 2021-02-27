@@ -7,6 +7,8 @@ client.once("ready", async () => {
     console.log("PRONTO PARA SENTIR PENA");
 });
 
+client.user.setActivity('AMASSANDO', { type: 'AMASSANDO CRÂNIOS' });
+
 client.on("message", async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
