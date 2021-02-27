@@ -5,9 +5,10 @@ require("dotenv").config();
 
 client.once("ready", async () => {
     console.log("PRONTO PARA SENTIR PENA");
+    client.login(process.env.TOKEN);
+    client.user.setActivity('AMASSANDO', { type: 'AMASSANDO CR' });
 });
 
-client.user.setActivity('AMASSANDO', { type: 'AMASSANDO CRÂNIOS' });
 
 client.on("message", async message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
