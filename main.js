@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "$";
+const ms = require('ms');
 require("dotenv").config();
 
 client.on("ready", async () => {
@@ -203,45 +204,6 @@ client.on("message", async message => {
         
         🐲TROPA DOS KONG ONLINE🤡🤡😎😎😎👌🖕 TA EIN SHOCK LARGATIXA?? 🤡🤡🤡👌🖕🖕VAI TOMA NO CU GODZILLA👿👌`);
     };
-
-    if (command === "mute") {
-        const syntax = "$mute <@> <duration as a number> <m, h, d or life>";
-        const {member, channel, content, mentions} = message;
-        if (!member.hasPermission("ADMINISTRATOR")) {
-            channel.send("Você não tem permissão amassar cranios");
-            return;
-        };
-
-        const split = content.trim().split(" ");
-        if (split.length !== 4) {
-            channel.send("Amasse da forma correta:" + syntax);
-            return;
-        };
-
-        const duration = split[2];
-        const durationType = split[3];
-
-        if (isNaN(duration)) {
-            channel.send("Coloque o tempo que vai amassar" + syntax);
-            return;
-        };
-
-        const durations = {
-            m: 60,
-            h: 60 * 60,
-            d: 60 * 60 * 24,
-            life: -1
-        };
-
-        if (!durations[durationType]) {
-            channel.send("Coloque uma forma valida de amassar o crânio " + syntax);
-            return;
-        };
-
-        const seconds = duration * durations[durationType];
-        const target = mentions.users.first();
-        console.log("MENTIONS", mentions);
-    };
     
     if (command === "clear") {
         if (message.deletable) {
@@ -268,10 +230,10 @@ client.on("message", async message => {
 
     if (command === "timeout") {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            return message.reply("Você não pode dar timeout").then(m => m.delete(5000));
+            return message.reply("Você não pode dar timeout").then(m => m.delete({ timeout: 5000} ));
         };
         
-        let person = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
+        let person = message.guild.member(message.mentions.users.first() || message.guild.members.cache.get(args[1]));
         if (!person) return message.reply("não achei o corno");
 
         let mainRole = message.guild.roles.cache.find(role => role.name === "ROLETERS");
@@ -279,23 +241,24 @@ client.on("message", async message => {
 
         if (!muteRole) return message.reply("não encontrei a role");
 
-        let time = args[2];
+        const muteTime = args[1];
+        
 
-        if (!time) {
+        if (!muteTime) {
             return message.reply("Coloque o tempo");
         };
 
         person.roles.remove(mainRole.id);
         person.roles.add(muteRole.id);
 
-        message.channel.send(`@${person.user.tag} tomou um mute insano de ${ms(ms(time))}`);
+        message.channel.send(`<@${person.user.id}> mutado por ${ms(ms(muteTime))}`);
 
-        setTimeout(function() {
+        setTimeout(() => {
             person.roles.add(mainRole.id);
             person.roles.remove(muteRole.id);
-            message.channel.send(`@${person.user.tag} desmutado`)
+            message.channel.send(`<@${person.user.id}> desmutado`);
 
-        }, ms(time));
+        }, ms(muteTime));
 
     };
 });
