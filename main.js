@@ -249,11 +249,7 @@ client.on("message", async message => {
         };
 
         if (!message.member.hasPermission("ADMINISTRATOR")) {
-            return message.reply("Você não pode apagar").then(m => m.delete(5000));
-        };
-
-        if (!message.guild.me.hasPermission("ADMINISTRATOR")) {
-            return message.reply("???").then(m => m.delete(5000));
+            return message.reply("Você não pode apagar").then(m => m.delete({ timeout: 5000} ));
         };
 
         let deleteAmout;
