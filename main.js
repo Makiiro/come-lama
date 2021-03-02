@@ -228,7 +228,7 @@ client.on("message", async message => {
 
     };
 
-    if (command === "timeout") {
+    if (command === "mute") {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
             return message.reply("Você não pode dar timeout").then(m => m.delete({ timeout: 5000} ));
         };
