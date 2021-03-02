@@ -74,6 +74,40 @@ client.on("message", async message => {
         message.channel.send({files: ["https://i.imgur.com/pLEBu1Y.jpg"]});
     };
 
+    if (command === "corn") {
+        message.channel.send(`<@!${message.author.id}> É\n
+    :corn: :corn: :corn: :corn:   :corn: :corn: :corn::corn:  :corn: :corn:  :corn:       :corn:                 :corn:   :corn: :corn: :corn: :corn:
+    :corn:                        :corn:              :corn:  :corn:         :corn:       :corn:  :corn:         :corn:   :corn:               :corn:                  
+    :corn:                        :corn:              :corn:  :corn: :corn:               :corn:     :corn:      :corn:   :corn:               :corn:                          
+    :corn:                        :corn:              :corn:  :corn:      :corn:          :corn:        :corn:   :corn:   :corn:               :corn:                      
+    :corn: :corn: :corn: :corn:   :corn: :corn: :corn::corn:  :corn:          :corn:      :corn:             :corn:       :corn: :corn: :corn: :corn:       
+
+    :corn: :corn: :corn::corn:
+    :corn:              :corn:
+    :corn:              :corn:
+    :corn:              :corn:
+    :corn: :corn: :corn::corn:
+
+    :corn: :corn:  :corn:
+    :corn:         :corn: 
+    :corn: :corn: 
+    :corn:      :corn: 
+    :corn:          :corn:
+
+    :corn:                :corn:
+    :corn: :corn:         :corn:
+    :corn:    :corn:      :corn:
+    :corn:       :corn:   :corn:
+    :corn:          :corn::corn:
+
+    :corn: :corn: :corn: :corn:
+    :corn:               :corn:
+    :corn:               :corn:
+    :corn:               :corn:
+    :corn: :corn: :corn: :corn:`);
+
+    };
+
 
     if (command === "kong") {
         message.channel.send(`TROPA DO KONG 🦍🦍🦍🦍 TROPA DO KONG 🦍🦍🦍🦍 😡 VAI TOMAR NO CU GODZILLA
@@ -266,6 +300,7 @@ client.on("message", async message => {
             message.channel.send(`@${person.user.tag} desmutado`)
 
         }, ms(time));
+
     };
 });
 
