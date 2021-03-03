@@ -228,6 +228,11 @@ client.on("message", async message => {
 
     };
 
+    if (command === "erga") {
+        message.channel.send({files:[ "https://i.imgur.com/GtDV1jd.png" ] });
+    };
+
+    
     if (command === "mute") {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
             return message.reply("Você não pode dar timeout").then(m => m.delete({ timeout: 5000} ));
