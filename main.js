@@ -232,7 +232,10 @@ client.on("message", async message => {
         message.channel.send({files:[ "https://i.imgur.com/GtDV1jd.png" ] });
     };
 
-    
+    if (command === "gracias") {
+        message.channel.send({ files: [ "https://i.imgur.com/gIxCyRe.png" ]});
+    };
+
     if (command === "mute") {
         if (!message.member.hasPermission("ADMINISTRATOR")) {
             return message.reply("Você não pode dar timeout").then(m => m.delete({ timeout: 5000} ));
