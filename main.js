@@ -22,6 +22,32 @@ client.on("message", async message => {
         message.channel.send("TENHO PENA");
     };
 
+    if (command === "ajuda") {
+        message.author.dmChannel.send(`Os comandos são: come,
+        comes, 
+        bebes,
+        comecrit,
+        matola,
+        inaba,
+        craque,
+        greve,
+        matcrit,
+        perdemo,
+        bonk,
+        casada,
+        linda,
+        k7,
+        onii,
+        mat,
+        roy,
+        corn,
+        kong,
+        clear,
+        erga,
+        mute.
+        AGORA ME MAME`);
+    };
+
     if (command === "matola") {
         message.channel.send("MATOLA NÃO COMA O MEU CRIT" + "<:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313>" );
     };
