@@ -22,8 +22,14 @@ client.on("message", async message => {
         message.channel.send("TENHO PENA");
     };
 
+    if (command === "mama") {
+        let user = message.mentions.users.first();
+        user.send("guei");
+
+    };
+
     if (command === "ajuda") {
-        message.author.dmChannel.send(`Os comandos são: come,
+        message.author.send(`Os comandos são: come,
         comes, 
         bebes,
         comecrit,
