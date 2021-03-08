@@ -11,6 +11,7 @@ client.on("ready", async () => {
 
 
 
+
 client.on("message", async message => {
     client.user.setActivity('AMASSANDO', { type: 'AMASSANDO CR' });
     if (!message.content.startsWith(prefix) || message.author.bot) return;
@@ -24,7 +25,7 @@ client.on("message", async message => {
 
     if (command === "mama") {
         let user = message.mentions.users.first();
-        user.send("guei");
+        user.send("Você é corno");
 
     };
 
@@ -50,13 +51,40 @@ client.on("message", async message => {
         kong,
         clear,
         erga,
-        mute.
+        mute,
+        mama,
+        hidratus
+        modes (slowmode).
         AGORA ME MAME`);
+    };
+
+    if (command === "modes") {
+        if (!message.member.hasPermission("ADMINISTRATOR")) {
+            return message.reply("Você não pode usar esse comando ").then(m => m.delete({ timeout: 5000} ));
+        };
+
+        const slowTime = args[1];
+        
+        if (!slowTime) {
+            message.reply("Coloque um valor em segundos");
+            return
+        };
+        message.channel.get().then().channel.setRateLimitePerUser(slowTime);
+        message.reply(`Esse canal está com slowmode de ${ms(ms(slowTime))}`);
+        setTimeout(() => {
+            message.channel.send(`Slowmode por ${slowTime}`);
+
+        }, ms(slowTime));
     };
 
     if (command === "matola") {
         message.channel.send("MATOLA NÃO COMA O MEU CRIT" + "<:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313><:bobsponga:445344728733581313>" );
     };
+
+    if (command === "hidratus") {
+        message.channel.send({files: ["https://i.imgur.com/EC99XnF.jpg"]});
+    };
+
 
     if (command === "inaba") {
         message.channel.send(`
