@@ -69,12 +69,9 @@ client.on("message", async message => {
             message.reply("Coloque um valor em segundos");
             return
         };
+
         message.channel.get().then().channel.setRateLimitePerUser(slowTime);
         message.reply(`Esse canal está com slowmode de ${ms(ms(slowTime))}`);
-        setTimeout(() => {
-            message.channel.send(`Slowmode por ${slowTime}`);
-
-        }, ms(slowTime));
     };
 
     if (command === "matola") {
@@ -329,6 +326,37 @@ client.on("message", async message => {
         }, ms(muteTime));
 
     };
+    
+    if (command === "durma") {
+        let person = message.guild.member(message.mentions.users.first());
+        message.channel.send(`BELEZA <@${person.user.id}> COMEU BISCOITO TOMOU LEITE ?\nhttps://www.youtube.com/watch?v=X0QaX2uxc5I`);
+        message.channel.send(`Olha eu quero estampar
+
+        Sonho sonho e ja
+        
+        Sonhe sonhe sonhe sonhe sonhe sonhe
+        
+        Cai no sono, vai dormir
+        
+        Sonho sonho seu guri
+        
+        Sonhe sonhe sonhe sonhe sonhe sonhe
+        
+        Vai dormir ou senão
+        
+        Vou te dar um pancadão
+        
+        Sonhe sonhe sonhe sonhe sonhe sonhe
+        
+        Dorme ai mas cuidado
+        
+        O perigo mora ao lado
+        
+        Sonhe sonhe sonhe sonhe sonhe sonhe`);
+    };
+
+
+
 });
 
 
