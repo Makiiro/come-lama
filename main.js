@@ -63,15 +63,9 @@ client.on("message", async message => {
             return message.reply("Você não pode usar esse comando ").then(m => m.delete({ timeout: 5000} ));
         };
 
-        const slowTime = args[1];
+        const slowTime = args[0];
+        message.channel.setRateLimitPerUser(slowTime);
         
-        if (!slowTime) {
-            message.reply("Coloque um valor em segundos");
-            return
-        };
-
-        message.channel.get().then().channel.setRateLimitePerUser(slowTime);
-        message.reply(`Esse canal está com slowmode de ${ms(ms(slowTime))}`);
     };
 
     if (command === "matola") {
